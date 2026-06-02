@@ -1,0 +1,37 @@
+{
+    "language": "Python",
+    "dependency_file": "requirements.txt",
+    "dependencies": ["pydicom", "numpy", "scipy", "scikit-learn", "matplotlib"],
+    "files": [
+        {
+            "path": "src/thymus_analyzer.py",
+            "description": "Core module for analyzing thymus health from medical images",
+            "exports": ["class ThymusAnalyzer", "function analyze_scan(file_path)", "function get_health_metrics(image_data)"]
+        },
+        {
+            "path": "src/batch_analyzer.py",
+            "description": "Module for batch processing of multiple CT scans",
+            "exports": ["class BatchAnalyzer", "function process_directory(folder_path)", "function generate_report(results)"]
+        },
+        {
+            "path": "src/model.py",
+            "description": "Machine learning models for thymus health prediction",
+            "exports": ["class ThymusModel", "function train_model(data_path)", "function predict_risk(model, features)"]
+        },
+        {
+            "path": "src/image_processor.py",
+            "description": "Handles loading and preprocessing of DICOM medical images",
+            "exports": ["function load_dicom(file_path)", "function preprocess_image(dicom_data)", "function extract_thymus_region(image_data)"]
+        },
+        {
+            "path": "src/report_generator.py",
+            "description": "Generates comprehensive health reports from analysis results",
+            "exports": ["function generate_health_report(result)", "function format_summary(result)", "function save_report(report, output_path)"]
+        },
+        {
+            "path": "src/cli.py",
+            "description": "Command-line interface for interacting with the tool",
+            "exports": ["function main()", "function setup_parser()", "function run_single_analysis(args)", "function run_batch_processing(args)"]
+        }
+    ]
+}
